@@ -4,7 +4,40 @@
 
 // function main begins program execution 
 int main(void) {
-   printf("Welcome to C!\n");
+   double length, width, area, result, average;
+   
+
+   do {
+      const char* str2 = "Enter the Lenght:";
+      puts(str2);
+      result = scanf("%lf", &length);
+
+      while (getchar() != '\n');
+
+      if (result != 1) {
+         printf("That's not a number! Please try again.\n");
+      }
+   } while (result != 1);
+
+   do {
+      const char* str2 = "Enter the Width:";
+      puts(str2);
+      result = scanf("%lf", &width);
+
+      while (getchar() != '\n');
+
+      if (result != 1) {
+         printf("That's not a number! Please try again.\n");
+      }
+   } while (result != 1);
+
+   area = length * width;
+   average = (length + width) / 2;
+
+   printf("Length: %0.1f Width: %0.1f and Area is %0.1f \n", length, width, area);
+   printf("The Average of the Lenght and Width is: %0.1f \n", average);
+
+return 0;   
 } // end function main 
 
 

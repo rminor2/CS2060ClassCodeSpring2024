@@ -1,58 +1,57 @@
-// Randomly generate numbers between a min and max for user to guess.
 
 
-//
+// seprate imorted libraries used 
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-//
+// Replaces everywhere it says "Max" with 1000 and everywhere it says "Min" with 1 
 #define MIN 1
 #define MAX 1000
 
-//
+// Made guessGame and isCorrect funcs to use later
 void guessGame(void); 
 bool isCorrect(int guess, int answer); 
 
 int main(void) {
-    //
+    //using time library to generate random time
    srand(time(0)); 
 
-   //
+   // uses guess game func
    guessGame();
 } // end main
 
 
 
-// 
+// guessGame func - interacts with user and creates random answer for user to guess
 void guessGame(void) {
     
-    //
+    // Inistlize variables respons and guess
    int response =0;
    int guess = 0;
 
-   // 
+   // keeps looping untill the guess is correct then breaks the loop 
    do {
 
-      // 
+      // creates random answer for each game
       int answer = 1 + rand() % MAX;
 
-      //
+      // Tells the user the range of the numbers he can guess in
       printf("I have a number between %d and %d.\n", MIN, MAX);
 
-      // 
+      // asks user for first guess
       puts("Can you guess my number?\n" 
            "Please type your first guess.");
 
-      //
+      //checks
       printf("%s", "? ");
       
 
-      //
-      scanf("%d", &guess);
-
-      // 
+      // Takes users guess
+      scanf("%d", &guess;
+)
+      // checks if users guess is correct, if not loops again.
       while (!isCorrect(guess, answer)) {
          scanf("%d", &guess);
       }
@@ -67,18 +66,18 @@ void guessGame(void) {
    } while (response == 1);
 } // end function guessGame
 
-// 
+// boolean func that checks is guess is right or wrong and displays too high or low if users guess is off
 bool isCorrect(int guess, int answer) {
 
-    //
+    // auto set to false 
     bool correct = false;
 
-   // 
+   // uf guess is correct set correct to true
    if (guess == answer) {
       correct = true;
    }
 
-   // 
+   // if guess is too high or low it displays the following - 
    if (guess < answer) {
       printf( "%s", "Too low. Try again.\n? " );
    }
