@@ -5,20 +5,30 @@
 
 // function prototypes
 void modifyArray(int b[], size_t size); 
-void modifyElement(int e);              
+void modifyElement(int e);
+void printArray(const int b[], size_t size);             
  
 // function main begins program execution
 int main(void) {
    int a[SIZE] = {0, 1, 2, 3, 4}; // initialize array a
 
+   printf("The address of the array (a): %p\n\n", a);
+
+   puts("The addresses of the array a - ");
+   // print adress of each elemnt of array a
+   for (size_t i = 0; i < SIZE; i++) {
+      printf("The address of a[%zu]: %p\n", i, &a[i]);
+   }
+
+   puts("\n");
+
    puts("Effects of passing entire array by reference:\n\nThe "
       "values of the original array are:");
 
    // output original array
-   for (size_t i = 0; i < SIZE; ++i) { 
-      printf("%3d", a[i]);
-   } 
+   printArray(a, SIZE);
 
+   
    puts(""); // outputs a newline
 
    modifyArray(a, SIZE); // pass array a to modifyArray by reference
@@ -53,6 +63,12 @@ void modifyElement(int e) {
    e *= 2; // multiply parameter by 2                                  
    printf("Value in modifyElement is %d\n", e);            
 } 
+
+void printArray(const int b[], size_t size) {
+   for (size_t i = 0; i < SIZE; ++i) { 
+      printf("%3d", b[i]);
+   } 
+}
 
 
 

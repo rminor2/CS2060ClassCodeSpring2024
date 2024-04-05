@@ -17,6 +17,10 @@ int main(void)
 {
 	char inputStr[LENGTH]; // create char array
 
+	exploreValidateInt("3");
+	exploreValidateInt("x");
+	exploreValidateInt("3x");
+
     printLimits();
 
 	for (unsigned int counter = 1; counter < 6; counter++)
